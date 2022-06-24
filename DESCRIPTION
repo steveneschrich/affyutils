@@ -1,0 +1,31 @@
+Package: affyutils
+Title: Affymetrix Array Utilities
+Version: 0.0.0.9000
+Authors@R: 
+    person("Steven", "Eschrich", , "Steven.Eschrich@moffitt.org", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package is a collection of functions that make working with
+ Affymetrix arrays easier within Bioconductor. Some are simple functions to do
+ things that I can't always remember how to do, some are more involved but are
+ things I typically do with this type of data.
+License: MIT + file LICENSE
+Depends: R (>= 3.5.0)
+URL: https://github.com/steveneschrich/affyutils
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Imports: 
+    affy,
+    AnnotationDbi,
+    Biobase,
+    BiocManager,
+    cli,
+    dplyr,
+    glue,
+    purrr,
+    rlang,
+    stringr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
