@@ -153,7 +153,7 @@ NULL
 
   # Special case one column data, convert to list.
   if ( ncol(res) == 1)
-    res <- deframe_with_rownames(res)
+    res <- saeutils::deframe_with_rownames(res)
 
   res
 }
@@ -196,7 +196,7 @@ NULL
 
   # Special case one column data, convert to list.
   if ( ncol(res) == 1)
-    res <- deframe_with_rownames(res)
+    res <- saeutils::deframe_with_rownames(res)
 
   res
 }

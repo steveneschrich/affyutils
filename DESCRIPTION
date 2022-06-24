@@ -24,8 +24,10 @@ Imports:
     glue,
     purrr,
     rlang,
+    saeutils,
     stringr,
     tibble
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Remotes: steveneschrich/saeutils
