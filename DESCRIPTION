@@ -15,7 +15,6 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Imports: 
-    affy,
     AnnotationDbi,
     Biobase,
     BiocManager,

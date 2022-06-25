@@ -24,24 +24,23 @@
 #' \dontrun{
 #' summarize_by(exprset, by = "SYMBOL", method = "max")
 #' }
-summarize_by <- function(.exprs, by = "SYMBOL", method = c("median","max","mean","min", "tukey.biweight")) {
+summarize_by <- function(.exprs, by = "SYMBOL", method = c("median","maxmedian","mean","minmedian", "tukey.biweight")) {
   stopifnot(is.ExpressionSet(.exprs))
 
-  method <- match.arg(method, c("median","max","mean","min", "tukey.biweight"))
+  method <- match.arg(method, c("median","maxmedian","mean","minmedian", "tukey.biweight"))
   s <- purrr::discard(annotate_with(.exprs, with = by), is.na)
 
-  # Using some dplyr to get indices of same symbol
-  mapping <- tibble::enframe(s, name=NULL) |>
-    dplyr::mutate(n=dplyr::row_number()) |>
+  # Using some dplyr to get probeset names of same symbol
+  mapping <- tibble::enframe(s) |>
     dplyr::group_by(.data$value) |>
-    dplyr::summarize(indices = list(.data$n)) |>
+    dplyr::summarize(indices = list(.data$name)) |>
     tibble::deframe()
 
   summarizer <- switch(method,
                        median = .summarize_median,
                        mean = .summarize_mean,
-                       max = .summarize_max,
-                       min = .summarize_min,
+                       maxmedian = .summarize_maxmedian,
+                       minmedian = .summarize_minmedian,
                        tukey.biweight = .summarize_tukey_biweight
   )
   new_exprs <- purrr::map_dfr(mapping, summarizer, Biobase::exprs(.exprs), .id = "rn") |>
@@ -90,16 +89,27 @@ summarize_by_ensembl <- function(...) {
 #'
 NULL
 
-#' @describeIn summarize Use the max value
+#' @describeIn summarize Use the probeset with the max median expression.
 #' @export
-.summarize_max <- function(i, x) {
-  apply(x[i,,drop=FALSE], 2, max)
+.summarize_maxmedian <- function(i, x) {
+  # p is the subset of data we are considering
+  p <- x[i,,drop=FALSE]
+  # Calculate medians
+  r <- Biobase::rowMedians(p)
+
+  p[which.max(r),]
 }
 
-#' @describeIn summarize Use the min value
+#' @describeIn summarize Use the probeset with the min median expression.
 #' @export
-.summarize_min <- function(i, x) {
-  apply(x[i,,drop=FALSE], 2, min)
+.summarize_minmedian <- function(i, x) {
+  # p is the subset of data we are considering
+  p <- x[i,,drop=FALSE]
+  # Calculate medians
+  r <- Biobase::rowMedians(p)
+
+  p[which.min(r),]
+
 }
 
 #' @describeIn summarize Use the median value
@@ -115,8 +125,22 @@ NULL
   colMeans(x[i,,drop=F])
 }
 
+#' @describeIn summarize Use Tukey's BiWeight calculation
+#' @export
 .summarize_tukey_biweight <- function(i, x) {
-  affy::tukey.biweight(x[i,,drop=F])
+  apply(x[i,,drop=F], 2, tukey_biweight)
 }
 
+tukey_biweight <- function(x, c = 5, epsilon = 1e-04) {
+  # This code is from affy::tukey.biweight
+  m <- stats::median(x)
+  s <- stats::median(abs(x - m))
+  u <- (x - m)/(c * s + epsilon)
+  w <- rep(0, length(x))
+  i <- abs(u) <= 1
+  w[i] <- ((1 - u^2)^2)[i]
+  t.bi <- sum(w * x)/sum(w)
+
+  t.bi
+}
 

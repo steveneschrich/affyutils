@@ -2,19 +2,22 @@
 % Please edit documentation in R/summarize.R
 \name{summarize}
 \alias{summarize}
-\alias{.summarize_max}
-\alias{.summarize_min}
+\alias{.summarize_maxmedian}
+\alias{.summarize_minmedian}
 \alias{.summarize_median}
 \alias{.summarize_mean}
+\alias{.summarize_tukey_biweight}
 \title{Summarize a group of probesets}
 \usage{
-.summarize_max(i, x)
+.summarize_maxmedian(i, x)
 
-.summarize_min(i, x)
+.summarize_minmedian(i, x)
 
 .summarize_median(i, x)
 
 .summarize_mean(i, x)
+
+.summarize_tukey_biweight(i, x)
 }
 \arguments{
 \item{i}{The rows of \code{x} to use in summarizing}
@@ -34,12 +37,14 @@ all probesets are equally good.
 }
 \section{Functions}{
 \itemize{
-\item \code{.summarize_max}: Use the max value
+\item \code{.summarize_maxmedian}: Use the probeset with the max median expression.
 
-\item \code{.summarize_min}: Use the min value
+\item \code{.summarize_minmedian}: Use the probeset with the min median expression.
 
 \item \code{.summarize_median}: Use the median value
 
 \item \code{.summarize_mean}: Use the mean value
+
+\item \code{.summarize_tukey_biweight}: Use Tukey's BiWeight calculation
 }}
 

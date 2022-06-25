@@ -30,8 +30,8 @@
 #' }
 subset_by <- function(.exprs, subset = NULL, by = c("PROBESET","SYMBOL"), verbose = TRUE) {
   by = match.arg(by, c("PROBESET","SYMBOL"))
-  # Stop if there are no mappable features - this should be known to caller.
-  stopifnot(is.ExpressionSet(.exprs) && any(subset %in% Biobase::featureNames(.exprs)))
+
+  stopifnot(is.ExpressionSet(.exprs))
 
   names(subset)<-subset
   ps <- Biobase::featureNames(.exprs)
@@ -65,6 +65,7 @@ subset_by <- function(.exprs, subset = NULL, by = c("PROBESET","SYMBOL"), verbos
 }
 
 #' @describeIn subset_by Subset by gene symbol
+#' @export
 subset_by_symbol <- function(...) {
   subset_by(by="SYMBOL",...)
 }

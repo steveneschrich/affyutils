@@ -10,7 +10,7 @@
 summarize_by(
   .exprs,
   by = "SYMBOL",
-  method = c("median", "max", "mean", "min", "tukey.biweight")
+  method = c("median", "maxmedian", "mean", "minmedian", "tukey.biweight")
 )
 
 summarize_by_symbol(...)

@@ -55,3 +55,20 @@ filter_n_above_threshold <- function(.exprs, threshold = 5, n=0) {
   num_above <- apply(Biobase::exprs(.exprs), 1, function(x){length(which(x>threshold))})
   .exprs[which(num_above >= n),]
 }
+
+#' Filter out genes (features) with low variability
+#'
+#' @param .exprs the ExpressionSet to use
+#' @param threshold  a minimum acceptable threshold of gene expression variance
+#'
+#' @return A new ExpressionSet reduced to genes passing the criteria.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' filter_by_variance(exprset, threshold = 0.5)
+#' }
+filter_by_variance <- function(.exprs, threshold = 0 ) {
+  vars <- apply(Biobase::exprs(.exprs), 1, stats::var)
+  .exprs[which(vars >= threshold),]
+}

@@ -75,9 +75,15 @@ annotate_with <- function(.exprs, with=NULL, use=c("first","last","everything"))
   a <- annotation_object(.exprs)
   use <- match.arg(use,c("first","last","everything"))
   if (use == "everything")
-    .map_fields_12many(a, fields = with)
+    f <- .map_fields_12many(a, fields = with)
   else
-    .map_fields_121(a, fields = with)
+    f <- .map_fields_121(a, fields = with)
+
+  # IMPORTANT: we have to put annotation in the exprs probeset order!
+  if ( is.null(dim(f)) )
+    f[Biobase::featureNames(.exprs)]
+  else
+    f[Biobase::featureNames(.exprs),]
 }
 
 #' @describeIn annotate_with Annotate with gene symbol
