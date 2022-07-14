@@ -1,0 +1,113 @@
+#%guid=4be1526f-09d3-49df-be5c-0faf9b94b3aa
+#%affymetrix-algorithm-param-apt-engine=ProbesetSummarizeEngine
+#%affymetrix-algorithm-param-apt-program-name=apt-probeset-summarize
+#%affymetrix-algorithm-param-apt-command-line=/usr/bin/apt-probeset-summarize -a rma -p Clariom_D_Human.r1.pgf -c Clariom_D_Human.r1.clf -o apt_rma_test_sample CEL/GSM4973811_BD2_HPV001.CEL
+#%affymetrix-algorithm-param-apt-exec-guid=2a5c9fe0-0b0c-4e78-977d-a1dec5e66893
+#%affymetrix-algorithm-param-apt-analysis-guid=68849b12-edc2-432f-57d3-e4ed5ab29da4
+#%affymetrix-algorithm-param-apt-time-str=Wed Jul  6 14:43:41 2022
+#%affymetrix-algorithm-param-apt-version=1.20.0 svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-cvs-id=svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-free-mem=827890762137
+#%affymetrix-algorithm-param-apt-opt-do-ps-names=false
+#%affymetrix-algorithm-param-apt-opt-chip-type=Clariom_D_Human
+#%affymetrix-algorithm-param-apt-opt-probe-count=6892960
+#%affymetrix-algorithm-param-apt-opt-force=false
+#%affymetrix-algorithm-param-apt-opt-precision=5
+#%affymetrix-algorithm-param-apt-opt-out-dir=apt_rma_test_sample
+#%affymetrix-algorithm-param-apt-opt-cc-expr-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cc-md-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-xda-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cdf-file=
+#%affymetrix-algorithm-param-apt-opt-spf-file=
+#%affymetrix-algorithm-param-apt-opt-pgf-file=Clariom_D_Human.r1.pgf
+#%affymetrix-algorithm-param-apt-opt-clf-file=Clariom_D_Human.r1.clf
+#%affymetrix-algorithm-param-apt-opt-bgp-file=
+#%affymetrix-algorithm-param-apt-opt-ps-list-file=
+#%affymetrix-algorithm-param-apt-opt-meta-ps-file=
+#%affymetrix-algorithm-param-apt-opt-qc-groups-file=
+#%affymetrix-algorithm-param-apt-opt-kill-list=
+#%affymetrix-algorithm-param-apt-opt-temp-dir=apt_rma_test_sample/temp
+#%affymetrix-algorithm-param-apt-opt-use-disk=true
+#%affymetrix-algorithm-param-apt-opt-diskCache=50
+#%affymetrix-algorithm-param-apt-opt-cel-count=1
+#%affymetrix-algorithm-param-apt-opt-cel-1=GSM4973811_BD2_HPV001.CEL
+#%affymetrix-algorithm-param-apt-opt-analysis-name=rma
+#%affymetrix-algorithm-param-apt-opt-set-analysis-name=
+#%affymetrix-algorithm-param-apt-opt-analysis-spec=rma-bg,quant-norm.sketch=0.bioc=true.lowprecision=false.usepm=true.target=0.doavg=false.subsetmd5=800d8021bc1d6081ee9bec6e0fd2842d,pm-only,med-polish.FixFeatureEffect=false.UseInputModel=false.FitFeatureResponse=true.expon=false.attenuate=true.l=0.005.h=-1,expr.genotype=false.strand=false.allele-a=false
+#%affymetrix-algorithm-param-apt-opt-feat-effect-file=
+#%affymetrix-algorithm-param-apt-opt-target-sketch-file=
+#%affymetrix-algorithm-param-apt-opt-do-residuals=false
+#%affymetrix-algorithm-param-apt-opt-do-feature-effects=false
+#%affymetrix-algorithm-param-apt-opt-write-sketch=false
+#%affymetrix-algorithm-param-apt-opt-reference-profile-file=
+#%affymetrix-algorithm-param-apt-opt-write-profile=false
+#%affymetrix-algorithm-param-quantification-name=med-polish
+#%affymetrix-algorithm-param-quantification-version=1.0
+#%affymetrix-algorithm-param-quantification-scale=log2
+#%affymetrix-algorithm-param-quantification-type=signal
+#%affymetrix-algorithm-param-apt-engine=ProbesetSummarizeEngine
+#%affymetrix-algorithm-param-apt-program-name=apt-probeset-summarize
+#%affymetrix-algorithm-param-apt-command-line=/usr/bin/apt-probeset-summarize -a rma -p Clariom_D_Human.r1.pgf -c Clariom_D_Human.r1.clf -o apt_rma_test_sample CEL/GSM4973811_BD2_HPV001.CEL
+#%affymetrix-algorithm-param-apt-exec-guid=2a5c9fe0-0b0c-4e78-977d-a1dec5e66893
+#%affymetrix-algorithm-param-apt-analysis-guid=68849b12-edc2-432f-57d3-e4ed5ab29da4
+#%affymetrix-algorithm-param-apt-time-str=Wed Jul  6 14:43:41 2022
+#%affymetrix-algorithm-param-apt-version=1.20.0 svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-cvs-id=svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-free-mem=827890762137
+#%affymetrix-algorithm-param-apt-opt-do-ps-names=false
+#%affymetrix-algorithm-param-apt-opt-chip-type=Clariom_D_Human
+#%affymetrix-algorithm-param-apt-opt-probe-count=6892960
+#%affymetrix-algorithm-param-apt-opt-force=false
+#%affymetrix-algorithm-param-apt-opt-precision=5
+#%affymetrix-algorithm-param-apt-opt-out-dir=apt_rma_test_sample
+#%affymetrix-algorithm-param-apt-opt-cc-expr-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cc-md-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-xda-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cdf-file=
+#%affymetrix-algorithm-param-apt-opt-spf-file=
+#%affymetrix-algorithm-param-apt-opt-pgf-file=Clariom_D_Human.r1.pgf
+#%affymetrix-algorithm-param-apt-opt-clf-file=Clariom_D_Human.r1.clf
+#%affymetrix-algorithm-param-apt-opt-bgp-file=
+#%affymetrix-algorithm-param-apt-opt-ps-list-file=
+#%affymetrix-algorithm-param-apt-opt-meta-ps-file=
+#%affymetrix-algorithm-param-apt-opt-qc-groups-file=
+#%affymetrix-algorithm-param-apt-opt-kill-list=
+#%affymetrix-algorithm-param-apt-opt-temp-dir=apt_rma_test_sample/temp
+#%affymetrix-algorithm-param-apt-opt-use-disk=true
+#%affymetrix-algorithm-param-apt-opt-diskCache=50
+#%affymetrix-algorithm-param-apt-opt-cel-count=1
+#%affymetrix-algorithm-param-apt-opt-cel-1=GSM4973811_BD2_HPV001.CEL
+#%affymetrix-algorithm-param-apt-opt-analysis-name=rma
+#%affymetrix-algorithm-param-apt-opt-set-analysis-name=
+#%affymetrix-algorithm-param-apt-opt-analysis-spec=rma-bg,quant-norm.sketch=0.bioc=true.lowprecision=false.usepm=true.target=0.doavg=false.subsetmd5=800d8021bc1d6081ee9bec6e0fd2842d,pm-only,med-polish.FixFeatureEffect=false.UseInputModel=false.FitFeatureResponse=true.expon=false.attenuate=true.l=0.005.h=-1,expr.genotype=false.strand=false.allele-a=false
+#%affymetrix-algorithm-param-apt-opt-feat-effect-file=
+#%affymetrix-algorithm-param-apt-opt-target-sketch-file=
+#%affymetrix-algorithm-param-apt-opt-do-residuals=false
+#%affymetrix-algorithm-param-apt-opt-do-feature-effects=false
+#%affymetrix-algorithm-param-apt-opt-write-sketch=false
+#%affymetrix-algorithm-param-apt-opt-reference-profile-file=
+#%affymetrix-algorithm-param-apt-opt-write-profile=false
+#%affymetrix-algorithm-param-quantification-name=med-polish
+#%affymetrix-algorithm-param-quantification-version=1.0
+#%affymetrix-algorithm-param-quantification-scale=log2
+#%affymetrix-algorithm-param-quantification-type=signal
+probeset_id	GSM4973811_BD2_HPV001.CEL
+23140001	6.59096
+23140002	7.12427
+23140003	7.00465
+23140004	7.98684
+23140005	8.83593
+23140006	10.06856
+23140007	9.44619
+23140008	2.04489
+23140009	2.13867
+23140010	2.19744
+23140011	2.21747
+23140012	2.23772
+23140013	2.23772
+23140014	2.23772
+23140015	2.27892
+23140016	2.27892
+23140017	2.32107
+23140018	2.34251
+23140019	2.39726
