@@ -52,7 +52,20 @@ load_apt_rma <- function(basename="rma") {
 #'
 #' @examples
 load_apt_rma_summary <- function(f) {
-  hdr <- readLines(f, n = 200)
+
+  # The header is proportional to the number of samples that were processed. There is no
+  # good way of knowing how big the header is, since we don't know how many samples. Even
+  # the file size is not accurate, since the chip may have different # of probes. So we
+  # just try multiple lengths until finding enough. This file can be really big, so this
+  # is presumably still a better option.
+  all_header <- FALSE
+  n <- 200
+  while (!all_header) {
+    hdr <- readLines(f, n = n<-n*2)
+    all_header <- index_of_last_apt_comment(hdr) != length(hdr)
+  }
+
+
 
   exprs <- readr::read_tsv(f,
                            skip = index_of_last_apt_comment(hdr),
