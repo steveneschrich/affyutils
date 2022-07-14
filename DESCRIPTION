@@ -1,6 +1,6 @@
 Package: affyutils
 Title: Affymetrix Array Utilities
-Version: 0.1.0.1
+Version: 0.1.0.2
 Authors@R: 
     person("Steven", "Eschrich", , "Steven.Eschrich@moffitt.org", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -32,4 +32,6 @@ Suggests:
     covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Remotes: steveneschrich/saeutils
+Remotes: steveneschrich/saeutils,
+  bioc::Biobase,
+  bioc::AnnotationDbi
