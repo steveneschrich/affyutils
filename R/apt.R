@@ -37,7 +37,8 @@ load_apt_rma <- function(basename="rma") {
 
   stopifnot(report$statistics$cel_files == colnames(summary))
 
-  Biobase::pData(summary)<- report$statistics
+  Biobase::pData(summary)<- report$statistics |>
+    tibble::column_to_rownames("cel_files")
 
   summary
 }
